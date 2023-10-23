@@ -3,7 +3,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="css/styles.css" rel="stylesheet">
-  <link href="images/img1.jpg"
+  <link href="images/img1.jpg">
+  <link href="images/img2.jpg">
+  <link href="images/img3.jpg" >
+  <link href="temp.js">
 </head>
  
 <body>
@@ -27,20 +30,20 @@
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
       <div class="numbertext">1 / 3</div>
-      <img src="img1.jpg" style="width:100%">
-      <div class="text">Caption Text</div>
+      <img src="images/img1.jpg" style="width:100%" height = 360px>
+    
     </div>
   
     <div class="mySlides fade">
       <div class="numbertext">2 / 3</div>
-      <img src="img2.jpg" style="width:100%">
-      <div class="text">Caption Two</div>
+      <img src="images/img2.jpg" style="width:100%" height = 360px>
+    
     </div>
   
     <div class="mySlides fade">
       <div class="numbertext">3 / 3</div>
-      <img src="img3.jpg" style="width:100%">
-      <div class="text">Caption Three</div>
+      <img src="images/img3.jpg" style="width:100%" height = 360px>
+    
     </div>
   
     <!-- Next and previous buttons -->
@@ -55,6 +58,82 @@
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
   </div>
+  <div>
+    <script>
+    let slideIndex = 1;
+      showSlides(slideIndex);
+      
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+      }</script>
+  </div>
 
 </body>
+<footer>
+  <div class="container">
+  <div class="container1">
+    <div class="product-card">
+      <img src="images/img4.jpg" height="190px" width="910px" alt="Product Name">
+      <div text-align:right;>
+      <h2 class="product-title">Interest Calculator</h2>
+      <p class="product-description">Calculate your compounded interest here!</p>
+      <button class="button">Annuity Calculator</button>
+    </div>
+  </div>
+    <!-- Add more product card elements here as needed -->
+  </div><div class="container2">
+    <div class="product-card">
+      <img src="images/img5.jpg" height="190px" width="910px" alt="Product Name">
+      <h2 class="product-title">Initial Deposit Calculator</h2>
+      <p class="product-description">Calculate your compounded interest here!</p>
+      <button class="button">Initial Deposit Calculator</button>
+    </div>
+  </div>
+  
+  </div>
+  <p></p>
+  <br>
+  <p></p>
+  <br>
+  <p></p>
+  <br>
+  <p></p>
+  <p></p>
+  <p></p>
+  <center>
+    <div class="thirdoption">
+    <div class="container1">
+      <div class="product-card">
+        <img src="images/img4.jpg" height="190px" width="910px" alt="Product Name">
+        <div text-align:right;>
+        <h2 class="product-title">Interest Calculator</h2>
+        <p class="product-description">Calculate your compounded interest here!</p>
+        <button class="button">Annuity Calculator</button>
+      </div>
+    </div>
+  </center>
+    
+</footer>
 </html>
